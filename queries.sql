@@ -4,7 +4,7 @@ SELECT name FROM restaurants
 WHERE does_takeout = 'yes';
 
 SELECT name FROM restaurants
-WHERE distance < 50;
+WHERE distance <= 50;
 
 SELECT id FROM restaurants
 WHERE name = 'Cheesecake Factory';
