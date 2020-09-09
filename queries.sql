@@ -15,3 +15,28 @@ WHERE name = 'PF Changs';
 
 SELECT favorite_dish FROM restaurants
 WHERE stars = 5;
+
+SELECT * FROM reviews
+WHERE restaurants_id = 2;
+
+SELECT * FROM reviews
+WHERE name = 'Cheesecake Factory';
+
+SELECT review FROM reviews 
+inner join restaurants on restaurants_id = restaurants.id 
+where restaurants.name = 'Cheesecake Factory';
+
+SELECT name, avg(reviews.stars)
+FROM restaurants, reviews
+where reviews.restaurants_id = restaurants.id
+GROUP BY restaurants_id;
+
+SELECT name, avg(reviews.stars)
+FROM restaurants, reviews
+where reviews.restaurants_id = restaurants.id
+GROUP BY restaurants.name;
+
+SELECT name, count(reviews)
+FROM restaurant, reviews
+WHERE reviews.restaurant_id = restaurant.id
+GROUP BY restaurants.name;
